@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1976D2">
+    <meta name="description" content="Servicetechniker Portal - Schnellzugriff auf KASYS und Telekom">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Service Portal">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <title>Servicetechniker Portal</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg viewBox="0 0 48 48" class="logo-icon">
+                    <circle cx="24" cy="24" r="22" fill="#1976D2"/>
+                    <path d="M16 20h16v2H16zm0 6h12v2H16zm8-14l8 8h-6v8h-4v-8h-6z" fill="white" transform="rotate(180 24 24)"/>
+                </svg>
+            </div>
+            <h1 class="title">Servicetechniker Portal</h1>
+            <p class="subtitle">Schnellzugriff auf Ihre Portale</p>
+        </header>
+
+        <main class="portal-grid">
+            <!-- KASYS Kachel -->
+            <a href="https://app.portal-kasys.de/" target="_blank" rel="noopener" class="portal-card kasys">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <rect x="8" y="8" width="48" height="48" rx="8" fill="#4CAF50"/>
+                        <path d="M20 32h24M32 20v24" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="32" cy="32" r="16" stroke="white" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">KASYS</h2>
+                    <p class="card-description">Auftragsmanagement Portal</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Telekom Kachel -->
+            <a href="https://termin.telekom.de/auftragsinfo/#" target="_blank" rel="noopener" class="portal-card telekom">
+                <div class="card-icon">
+                    <svg viewBox="0 0 64 64" fill="none">
+                        <rect x="8" y="8" width="48" height="48" rx="8" fill="#E20074"/>
+                        <circle cx="32" cy="28" r="8" fill="white"/>
+                        <path d="M20 48c0-8 5.4-12 12-12s12 4 12 12" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Telekom</h2>
+                    <p class="card-description">Auftragsinfo & Terminierung</p>
+                </div>
+                <div class="card-arrow">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </div>
+            </a>
+        </main>
+
+        <footer class="footer">
+            <p class="offline-indicator" id="offlineIndicator">
+                <span class="offline-dot"></span>
+                Offline - Verbindung prüfen
+            </p>
+            <p class="version">Version 1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- Install Prompt Banner -->
+    <div class="install-banner" id="installBanner">
+        <p>App installieren für schnelleren Zugriff</p>
+        <button class="install-btn" id="installBtn">Installieren</button>
+        <button class="dismiss-btn" id="dismissBtn">×</button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

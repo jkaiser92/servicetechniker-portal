@@ -1,0 +1,12 @@
+{
+  "name": "servicetechniker-portal",
+  "version": "1.0.0",
+  "description": "PWA für Servicetechniker - Schnellzugriff auf KASYS und Telekom",
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js",
+    "serve": "npx serve -l 3000"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}
