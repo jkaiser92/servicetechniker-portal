@@ -77,7 +77,7 @@ async function main() {
 
   const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
 
-  // Regular icons
+  // Regular icons (Portal)
   for (const size of sizes) {
     await generateIcon(mainIconSvg(size, false), `icon-${size}.png`);
   }
@@ -87,7 +87,51 @@ async function main() {
     await generateIcon(mainIconSvg(size, true), `icon-maskable-${size}.png`);
   }
 
-  // Shortcut icons
+  // KASYS Icons (Grün)
+  const kasysIconSvg = (size, maskable = false) => {
+    const padding = maskable ? size * 0.15 : 0;
+    const cx = size / 2;
+    const cy = size / 2;
+    const fontSize = (size - padding * 2) * 0.45;
+    const textY = cy + fontSize * 0.35; // Optische Mitte
+    
+    const background = maskable 
+      ? `<rect width="${size}" height="${size}" fill="#4CAF50"/>`
+      : `<circle cx="${cx}" cy="${cy}" r="${size/2}" fill="#4CAF50"/>`;
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  ${background}
+  <text x="${cx}" y="${textY}" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold" fill="white" text-anchor="middle">K</text>
+</svg>`;
+  };
+
+  await generateIcon(kasysIconSvg(192, false), 'kasys-icon-192.png');
+  await generateIcon(kasysIconSvg(512, false), 'kasys-icon-512.png');
+  await generateIcon(kasysIconSvg(512, true), 'kasys-icon-maskable-512.png');
+
+  // Telekom Icons (Magenta)
+  const telekomIconSvg = (size, maskable = false) => {
+    const padding = maskable ? size * 0.15 : 0;
+    const cx = size / 2;
+    const cy = size / 2;
+    const fontSize = (size - padding * 2) * 0.45;
+    const textY = cy + fontSize * 0.35; // Optische Mitte
+    
+    const background = maskable 
+      ? `<rect width="${size}" height="${size}" fill="#E20074"/>`
+      : `<circle cx="${cx}" cy="${cy}" r="${size/2}" fill="#E20074"/>`;
+
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+  ${background}
+  <text x="${cx}" y="${textY}" font-family="Arial, sans-serif" font-size="${fontSize}" font-weight="bold" fill="white" text-anchor="middle">T</text>
+</svg>`;
+  };
+
+  await generateIcon(telekomIconSvg(192, false), 'telekom-icon-192.png');
+  await generateIcon(telekomIconSvg(512, false), 'telekom-icon-512.png');
+  await generateIcon(telekomIconSvg(512, true), 'telekom-icon-maskable-512.png');
+
+  // Old shortcut icons (for backward compatibility)
   await generateIcon(shortcutIconSvg('kasys', 96), 'kasys-shortcut.png');
   await generateIcon(shortcutIconSvg('telekom', 96), 'telekom-shortcut.png');
 

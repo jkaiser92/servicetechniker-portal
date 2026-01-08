@@ -1,0 +1,32 @@
+{
+  "name": "KASYS Portal",
+  "short_name": "KASYS",
+  "description": "Direktzugriff auf KASYS Auftragsmanagement",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#4CAF50",
+  "theme_color": "#4CAF50",
+  "orientation": "portrait-primary",
+  "scope": ".",
+  "lang": "de-DE",
+  "icons": [
+    {
+      "src": "../icons/kasys-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/kasys-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/kasys-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
